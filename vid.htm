@@ -5,8 +5,9 @@ alert('Error:'+m+'\nURL:'+u+'\nLine:'+l);return true;};
 <iframe src="" style="position:absolute;left:0;top:0;width:100%;height:100%;">
 </iframe>
 <script>
-a = 1;
+a = 0;
 document.addEventListener("keydown",f3);
+f1(1);
 
 function f3(e){
 if (e.keyCode == 37)
@@ -16,8 +17,8 @@ f1(1);
 }
 
 function f1(i){
-document.getElementsByTagName("iframe")[0].src = "https://tiny.cc/vid" + f2(a);
 a = a + i;
+document.getElementsByTagName("iframe")[0].src = "https://tiny.cc/vid" + f2(a);
 }
 
 function f2(p){
