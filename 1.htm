@@ -1,0 +1,32 @@
+<script>
+window.onerror = function(m,u,l){
+alert('Error:'+m+'\nURL:'+u+'\nLine:'+l);
+return true;
+};
+</script>
+<video playsinline autoplay loop muted style="position:absolute;left:0px;top:0px;width:auto;height:100%">
+<source src="">
+</source>
+</video>
+<script>
+v = document.getElementsByTagName("video")[0];
+a = window.location.href;
+b = a.substring(a.split("?")[0].length + 1,a.length).split("&");
+c = b[1].split(",");
+v.addEventListener("timeupdate",f1,false);
+v.style.visibility = "hidden";
+v.src = b[0];
+d = true;
+
+function f1(){
+if (d){
+v.currentTime = c[0] * 1;
+v.style.visibility = "visible";
+d = false;
+}
+if (v.currentTime >= c[1] * 1)
+v.currentTime = c[0] * 1;
+}
+
+
+</script>
